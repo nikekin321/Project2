@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: techtrends
+  namespace: sandbox
+  labels:
+    test: project
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      test: project
+  template:
+    metadata:
+      labels:
+        test: project
+    spec:
+      containers:
+        -  image: nikekin321/techtrends:latest
+           imagePullPolicy: IfNotPresent
+           name: techtrends
+           ports:
+             - containerPort: 3111
+           resources:
+             requests:
+               cpu: 250m
+               memory: 64Mi
+             limits:
+               cpu: 500m
+               memory: 128Mi
+           livenessProbe:
+             httpGet:
+               path: /healthz
+               port: 3111
+           readinessProbe:
+             httpGet:
+               path: /healthz
+               port: 3111

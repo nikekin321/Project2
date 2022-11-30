@@ -1,0 +1,22 @@
+namespace:
+  name: prod
+service:
+  port: 7111
+  targetPort: 3111
+  protocol: TCP
+  type: ClusterIP
+image:
+  repository: nikekin321/techtrends
+  tag:latest
+  pullPolicy: Always
+resources:
+  requests:
+      memory: 128Mi
+      cpu: 350m
+    limits:
+      memory: 246Mi
+      cpu: 500m
+livenessprobepath: /healthz
+readinessprobepath: /healthz
+containerPort: 3111
+replicaCount:5

@@ -1,0 +1,22 @@
+## Docker commands used to build the application 
+# TODO: insert the docker build command
+docker build -t techtrends .
+## Docker commands used to run the application
+# TODO: insert the docker run command
+$ docker run -d -p 7111:3111 techtrends
+a58b2222f7c553d7213ac4a187c8479ae035557a153780ae6bf291673c6ff0c8
+## Docker commands used to get the application logs
+# TODO: insert the docker logs command
+ekint@N-20L6PF1PRDLC MINGW64 ~/nd064_course_1-main/project/techtrends
+$ docker ps
+CONTAINER ID   IMAGE        COMMAND           CREATED         STATUS         PORTS                    NAMES
+a58b2222f7c5   techtrends   "python app.py"   4 minutes ago   Up 4 minutes   0.0.0.0:7111->3111/tcp   kind_haslett
+
+## Logs from the container running the TechTrends application
+# TODO: paste logs from the Docker container 
+$ docker logs a58b2222f7c5
+ * Serving Flask app 'app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off

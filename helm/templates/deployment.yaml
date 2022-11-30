@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: techtrends
+  namespace: {{ .Values.namespace.name }} 
+  labels:
+    test: project
+spec:
+  replicas: {{ .Values.replicaCount }} 
+  selector:
+    matchLabels:
+      test: project
+  template:
+    metadata:
+      labels:
+        test: project
+    spec:
+      containers:
+        -  image: nikekin321/techtrends:latest
+           imagePullPolicy: {{ .Values.image.pullPolicy }} 
+           name: techtrends
+           ports:
+             - containerPort: {{ .Values.containerPort }} 
+           resources:
+             requests:
+               cpu: {{ .Values.resources.requests.cpu }} 
+               memory: {{ .Values.resources.requests.memory }} 
+             limits:
+               cpu: {{ .Values.resources.limits.cpu }} 
+               memory: {{ .Values.resources.limits.memory }} 
+           livenessProbe:
+             httpGet:
+               path: {{ .Values.livenessprobepath }} 
+               port: {{ .Values.containerPort }} 
+           readinessProbe:
+             httpGet:
+               path: {{ .Values.readinessprobepath }} 
+               port: {{ .Values.containerPort }} 
