@@ -19,4 +19,4 @@ resources:
 livenessprobepath: /healthz
 readinessprobepath: /healthz
 containerPort: 3111
-replicaCount:3
+replicaCount: 3
