@@ -7,8 +7,8 @@ service:
   type: ClusterIP
 image:
   repository: nikekin321/techtrends
-  tag:latest
-  pullPolicy: IfNotPresent
+  tag: latest
+  imagePullPolicy: IfNotPresent
 resources:
   requests:
       memory: 64Mi
