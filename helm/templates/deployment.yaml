@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         -  image: nikekin321/techtrends:latest
-           imagePullPolicy: {{ .Values.image.pullPolicy }} 
+           imagePullPolicy: {{ .Values.image.imagePullPolicy }} 
            name: techtrends
            ports:
              - containerPort: {{ .Values.containerPort }} 
