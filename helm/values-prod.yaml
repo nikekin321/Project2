@@ -11,11 +11,11 @@ image:
   imagePullPolicy: Always
 resources:
   requests:
-      memory: 128Mi
-      cpu: 350m
-    limits:
-      memory: 246Mi
-      cpu: 500m
+    memory: 128Mi
+    cpu: 350m
+  limits:
+    memory: 246Mi
+    cpu: 500m
 livenessprobepath: /healthz
 readinessprobepath: /healthz
 containerPort: 3111
